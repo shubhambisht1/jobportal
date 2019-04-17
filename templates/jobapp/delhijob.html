@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'jobapp/base.html'%}
+{%load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static "css/delhijob.css"%}">
+    <title></title>
+
+  </head>
+  <body>
+    {%block body_block %}
+    <h1>DELHI JOB INFORMATION</h1>
+{% if delhijob_list %}
+<table>
+  <thead>
+    <th>DATE</th>
+    <th>COMPANY</th>
+    <th>TITLE</th>
+    <th>ELIGIBILITY</th>
+    <th>EMAIL</th>
+    <th>PHONE NO</th>
+  </thead>
+  {% for job in delhijob_list %}
+  <tr>
+    <td>{{job.date}}</td>
+    <td>{{job.company}}</td>
+    <td>{{job.title}}</td>
+    <td>{{job.eligibility}}</td>
+    <td>{{job.email}}</td>
+    <td>{{job.phoneno}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>data not found</p>
+{% endif %}
+{% endblock %}
+  </body>
+</html>

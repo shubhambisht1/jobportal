@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'jobapp/base.html' %}
+{% block body_block %}
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{%static "css/feedback.css" %}">
+    <title></title>
+  </head>
+  <body>
+    <div class="container" align="center">
+<h1>FEEDBACK FORM </h1>
+    <form method="post">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input type="submit" value="feedback">
+</form>
+</div>
+{% endblock %}
+</body>
+</html>
